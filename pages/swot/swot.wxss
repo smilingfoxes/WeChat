@@ -1,0 +1,37 @@
+/* pages/swot/swot.wxss */
+.container{
+width: 100%;
+height: 480px;
+display:flex;
+flex-direction: row;
+flex-wrap:wrap;
+background-color: orange;
+}
+.strength{
+line-height: 210px;
+text-align: center;
+background-color: pink;
+height: 50%;
+width: 50%;
+}
+.weakness{
+line-height: 210px;
+text-align: center;
+background-color: yellow;
+height: 50%;
+width: 50%;
+}
+.opportunity{
+line-height: 210px;
+text-align: center;
+background-color: green;
+height: 50%;
+width: 50%;
+}
+.threat{
+line-height: 210px;
+text-align: center;
+background-color: red;
+height: 50%;
+width: 50%;
+}

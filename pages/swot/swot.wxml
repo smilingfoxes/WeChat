@@ -1,0 +1,6 @@
+<view class="container" >
+<view bindtap='changeToS' class= "strength">优势</view>
+<view class="weakness">劣势</view>
+<view class="opportunity">机会</view>
+<view class="threat">威胁</view>
+</view>

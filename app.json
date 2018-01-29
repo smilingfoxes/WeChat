@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/swot/swot",
+    "pages/strength/strength",
+    "pages/bmc/bmc",
+    "pages/userImage/userImage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小卡片",
+    "navigationBarTextStyle": "black"
+  }
+}
