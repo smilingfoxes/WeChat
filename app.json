@@ -4,7 +4,8 @@
     "pages/swot/swot",
     "pages/strength/strength",
     "pages/bmc/bmc",
-    "pages/userImage/userImage"
+    "pages/userImage/userImage",
+    "pages/field/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
