@@ -5,10 +5,6 @@ module.exports = {
       title: '姓名',
       placeholder: '名字'
     },
-    job:{
-        title: '职业',
-        placeholder:'未知',
-    },
     tel: {
       error: true,
       title: '联系电话',
@@ -21,17 +17,10 @@ module.exports = {
       placeholder: '请输入详细地址'
     }
   },
-  // 无标题输入框-用户行为
-  behavior: {
-    placeholder: '暂无',
-    type:'textarea',
+  // 无标题输入框
+  notitle: {
+    placeholder: '请输入收货人姓名',
     componentId: 'textarea:test'
-  },
-  //无行为输入框-用户需求
-  userNeed:{
-   placeholder:'未知',
-   type:'textarea',
-   componentId:'texarea:test',
   },
   // 圆角输入框
   radius: {

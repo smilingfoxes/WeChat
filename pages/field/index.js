@@ -12,7 +12,7 @@ Page(Object.assign({}, Zan.Field, {
     pickerViewConfig: {
       show: false,
       value: [0, 0],
-      year: [2016, 2017, 2018],
+      year: [7,8,9,10, 11, 12],
       sex: ['男', '女']
     }
   },
