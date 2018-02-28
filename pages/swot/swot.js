@@ -67,5 +67,25 @@ Page({
     wx.navigateTo({
       url: '../strength/strength',
     })
-  }
+  },
+   movableTest: function(){
+     wx.navigateTo({
+       url: '../testview/movable',
+     })
+   },
+   changeToW: function(){
+     wx.navigateTo({
+       url: '../weakness/weakness',
+     })
+   },
+   changeToO: function(){
+     wx.navigateTo({
+       url: '../opportunity/opportunity',
+     })
+   },
+   changeToT: function(){
+     wx.navigateTo({
+       url: '../threat/threat',
+     })
+   }
 })

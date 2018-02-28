@@ -5,7 +5,14 @@
     "pages/strength/strength",
     "pages/bmc/bmc",
     "pages/userImage/userImage",
-    "pages/field/index"
+    "pages/field/index",
+    "pages/testview/movable",
+    "pages/weakness/weakness",
+    "pages/opportunity/opportunity",
+    "pages/threat/threat",
+    "pages/bmc_team/bmc_team",
+    "pages/bmc_user/bmc_user",
+    "pages/bmc_value/bmc_value"
   ],
   "window": {
     "backgroundTextStyle": "light",

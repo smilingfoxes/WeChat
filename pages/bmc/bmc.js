@@ -3,22 +3,29 @@
 var app = getApp();
 Page({
   data: {
+    slidenum: 0,
     animationData: {},
     cardInfoList: [{
-      cardUrl: 'http://sinastorage.com/storage.zone.photo.sina.com.cn/zone/img/20171213/1d23dd198728893de494012719b95e9c.jpg?&ssig=XJkXAias7P&KID=sina,slidenews&Expires=1515082598',
+      cardUrl:'../../images/flower.png',
+      cardid: "0",
       cardInfo: {
+       
         cardTitle: '团队',
         cardInfoMes: ['', '']
       }
     }, {
-      cardUrl: 'http://sinastorage.com/storage.zone.photo.sina.com.cn/zone/img/20171213/1d23dd198728893de494012719b95e9c.jpg?&ssig=XJkXAias7P&KID=sina,slidenews&Expires=1515082598',
+        cardUrl: '../../images/flower.png',
+        cardid: "1",
       cardInfo: {
+        
         cardTitle: '价值',
         cardInfoMes: ['价值主张', '', '']
       }
     }, {
-      cardUrl: 'http://sinastorage.com/storage.zone.photo.sina.com.cn/zone/img/20171213/1d23dd198728893de494012719b95e9c.jpg?&ssig=XJkXAias7P&KID=sina,slidenews&Expires=1515082598',
+        cardUrl: '../../images/flower.png',
+        cardid: "2",
       cardInfo: {
+        
         cardTitle: '用户',
         cardInfoMes: ['用户细分', '', '']
       }
@@ -26,6 +33,8 @@ Page({
   },
   //事件处理函数
   slidethis: function(e) {
+    
+    
     console.log(e);
     var animation = wx.createAnimation({
       duration: 300,
@@ -36,27 +45,49 @@ Page({
     this.animation.translateY(-420).rotate(-5).translateX(0).step();
     this.animation.translateY(62).translateX(25).rotate(0).step();
     this.setData({
+      
       animationData: this.animation.export()
     });
+    this.data.slidenum++ ,
+    console.log("滑动的次数: " + this.data.slidenum);
     setTimeout(function() {
       var cardInfoList = self.data.cardInfoList;
       var slidethis = self.data.cardInfoList.shift();
       self.data.cardInfoList.push(slidethis);
       self.setData({
         cardInfoList: self.data.cardInfoList,
+        
         animationData: {}
       });
+      
+      //console.log("这里发生了赋值：" + cardInfoList)
     }, 350);
   },
   buythis: function(e) {
     console.log(e);
     app.buyDetail = this.data.cardInfoList[e.target.id];
+    //跳转团队
+    if(this.data.slidenum%3==0){
     wx.navigateTo({
-      url: '../strength/strength'
+      url: '../bmc_team/bmc_team'
+    });}
+    //跳转价值
+  if(this.data.slidenum%3 == 1) {
+    wx.navigateTo({
+      url: '../bmc_value/bmc_value'
     });
+  }
+  if (this.data.slidenum % 3 == 2) {
+    wx.navigateTo({
+      url: '../bmc_user/bmc_user'
+    });
+  }
+    
+    
   },
   onLoad: function () {
     console.log('onLoad');
+   // this.setData({slidenum:0});
     var that = this;
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo){

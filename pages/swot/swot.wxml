@@ -1,6 +1,8 @@
 <view class="container" >
-<view bindtap='changeToS' class= "strength">优势</view>
-<view class="weakness">劣势</view>
-<view class="opportunity">机会</view>
-<view class="threat">威胁</view>
+<view bindtap='changeToS' class= "strength">优势
+<view class="zan-icon zan-icon-points"></view></view>
+<view bindtap='changeToW' class="weakness">劣势
+<view class ="zan-icon zan-icon-browsing-history"></view></view>
+<view bindtap="changeToO" class="opportunity">机会<view class="zan-icon zan-icon-birthday-privilege"></view></view>
+<view bindtap="changeToT" class="threat">威胁<view class="zan-icon zan-icon-question"></view></view>
 </view>

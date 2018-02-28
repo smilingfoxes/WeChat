@@ -16,6 +16,7 @@ Page(Object.assign({}, Zan.Field, {
       sex: ['男', '女']
     }
   },
+ 
 
   onAreaChange(e) {
     this.setData({

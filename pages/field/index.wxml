@@ -1,5 +1,5 @@
 <import src="/dist/field/index.wxml" />
-
+<!--用户画像-->
 <view class="container">
   <view class="doc-title zan-hairline--bottom">用户画像记录</view>
 

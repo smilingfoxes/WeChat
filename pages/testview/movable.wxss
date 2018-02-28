@@ -1,13 +1,3 @@
-.flex-view{
- height:480px;
-  background-color:antiquewhite;
-}
-.flex-view-item{
-  line-height: 370rpx;
-  text-align: center;
-  color: #333333;
-  height: 160px;
-}
 .kf_button{
   background-color: rgba(255, 255, 255, 0);
   border: 0px;
