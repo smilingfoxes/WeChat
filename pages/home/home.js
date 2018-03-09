@@ -85,6 +85,12 @@ Page({
       url: '../field/index',
     })
   },
+  chakan: function(){
+    wx.navigateTo({
+      url: '../userImageList/userImageList',
+    })
+  },
+
   swot:function(){
     wx.navigateTo({
       url: '../swot/swot',

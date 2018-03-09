@@ -1,0 +1,36 @@
+<!--pages/myOrder/myOrder.wxml-->
+<view class='container'>
+  <!-- 订单列表 -->
+  <block wx:for-items="{{carInfoData}}">
+    <view class='card  b-shadow' bindtap='toggleBtn' id="{{item.id}}">
+      
+      <view class='nearCard-fr'>
+        <view>ID：
+          <text class='c-green'>{{item.id}}</text>
+        </view>
+        <view>姓名：
+          <text class='c-green'>{{item.Name}}</text>
+        </view>
+        <view>职业：
+          <text class='c-green'>{{item.career}}</text>
+        </view>
+        <view>年龄：
+          <text class='c-green'>{{item.age}}</text>
+        </view>
+        <view>性别：
+          <text class='c-green'>{{item.gender}}</text>
+        </view>
+        <view>省份：
+        <text class='c-green'>{{item.address}}</text>
+        </view>
+      </view>
+      <view class='down clearfix {{uhide==item.id?"":"hidden"}}'>
+        <view class='ml30'>用户行为：
+        {{item.behavior}}</view>
+        <view class='ml30'>用户需求：
+        {{item.demand}}</view>
+        <view bindtap='changeContent' id='{{item.id}}' class='feedBack'>修改用户画像</view>
+      </view>
+    </view>
+  </block>
+</view>

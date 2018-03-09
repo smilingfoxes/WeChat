@@ -3,12 +3,14 @@ module.exports = {
   base: {
     name: {
       title: '姓名',
-      placeholder: '名字'
-    },
+      placeholder: '名字',
+      componentId: 1    },
     job:{
         title: '职业',
         placeholder:'未知',
+        componentId: 2
     },
+    userImageId: 1,
     tel: {
       error: true,
       title: '联系电话',
@@ -25,13 +27,13 @@ module.exports = {
   behavior: {
     placeholder: '暂无',
     type:'textarea',
-    componentId: 'textarea:test'
+    componentId: 3,
   },
   //无行为输入框-用户需求
   userNeed:{
    placeholder:'未知',
    type:'textarea',
-   componentId:'texarea:test',
+   componentId: 4,
   },
   // 圆角输入框
   radius: {

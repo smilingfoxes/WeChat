@@ -3,7 +3,11 @@ style="display: block;">
 
   <view bindtap="swot"  class="flex-view-item" style="flex:1;width:100%;background-color:#ff4343 ">SWOT</view>
 
-  <view bindtap="toast" class="flex-view-item" style="flex:1;width:100%;background-color:#ffab19">用户画像</view>
+
+ <view bindtap="toast"class="flex-view-item" style="width:100%;background-color:#ffab19" >创建用户画像 </view>
+<view bindtap="chakan" class="flex-view-items" style="width:100%;background-color:#ffab19">查看用户画像 </view>
+
+  
 
   <view bindtap="bmc" class="flex-view-item" style="flex:1;width:100%;background-color:#00aaff">商业模式画布</view>
  <button class="kf_button" bindtap='kefu' open-type="contact" session-from="weapp">

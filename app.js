@@ -1,5 +1,10 @@
 //app.js
 App({
+  globalData: {
+    storageInfo:''   ,                  //储存uerData Key
+    userImageIdKey:'' ,       //储存userImgaId的key
+    datai:0,
+    },  
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

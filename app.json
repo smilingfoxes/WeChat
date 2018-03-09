@@ -12,7 +12,9 @@
     "pages/threat/threat",
     "pages/bmc_team/bmc_team",
     "pages/bmc_user/bmc_user",
-    "pages/bmc_value/bmc_value"
+    "pages/bmc_value/bmc_value",
+    "pages/userImageList/userImageList"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",

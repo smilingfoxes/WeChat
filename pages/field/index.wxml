@@ -95,7 +95,11 @@
       bindtap="clearTextarea">清除输入</button>
   </view>
 
-  
+   <view class="zan-btns">
+    <button
+      class="zan-btn zan-btn--primary"
+      bindtap="uploadUserImage">提交用户画像</button>
+  </view>
  
 
 
