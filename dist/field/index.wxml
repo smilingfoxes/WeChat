@@ -19,7 +19,7 @@
       wx:else
       type="{{ inputType || 'text' }}"
       name="{{ name || componentId || '' }}"
-      value="{{ value }}"
+      value="{{ value || valuen || valuec }}"
       placeholder="{{ placeholder }}"
       class="zan-field__input zan-cell__bd {{ right ? 'zan-field__input--right' : '' }}"
       placeholder-class="zan-field__placeholder"

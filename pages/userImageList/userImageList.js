@@ -24,7 +24,7 @@ Page({
         {
           "id": 1,
          
-          "Name": "张三",
+          "Name": "示例",
           "career": "学生",
           "age": "18",
           "gender": "男",
@@ -32,7 +32,7 @@ Page({
           "behavior":"爱好编程， 测试测试测试测试测试测试测试，测试测试测试测试测试测试测试，测试测试测试测试测试测试测试",
           "demand":"需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide"
         },
-        {
+       /* {
           "id": 2,
           
           "Name": "李四",
@@ -64,7 +64,7 @@ Page({
           "address": "北京",
           "behavior": "爱好编程， 测试测试测试测试测试测试测试，测试测试测试测试测试测试测试，测试测试测试测试测试测试测试",
           "demand": "需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide"
-        }
+        }*/
       ]
     };
     //console.log(data.datas);
@@ -93,7 +93,7 @@ Page({
 
              
              var newarray = [{
-               "id": res.data.numId+5 ,
+               "id": res.data.numId+2 ,
 
                "Name": res.data.Name,
                "career": res.data.Career,
@@ -142,10 +142,24 @@ Page({
   },
   //修改用户画像
   changeContent:function(event){
-
+   /* console.log("event.currentTarget.id" + event.currentTarget.id);
+    var temKey = 'userData' + (event.currentTarget.id - 1)
+    console.log("temkey" + temKey)*/
     wx.navigateTo({
-      url: '../testview/movable?title=' + event.currentTarget.id
-    })
+      //url: '../testview/movable?title=' + event.currentTarget.id
+      url: '../field_change/field_change?temUserImageId=' + (event.currentTarget.id - 1)
+    });
+    
+    /*wx.getStorage({
+      key: temKey,
+      success: function(res) {
+        console.log("修改的数据:::::::::"+res.data)
+      },
+      fail:function(res){
+        console.log("失败了");
+      }
+    })*/
+    //console.log("要修改的数据："+data.datas[event.currentTarget.id]);
   }, 
  
   

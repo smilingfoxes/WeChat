@@ -68,6 +68,7 @@ Page(Object.assign({}, Zan.Field, {
     });
     console.log("省份的索引号："+e.detail.value);
     console.log("省份："+this.data.area[e.detail.value]);
+   
     this.setData({temProvince:this.data.area[e.detail.value]})
     console.log(this.data.temProvince);
   },
@@ -172,7 +173,16 @@ Page(Object.assign({}, Zan.Field, {
     console.log("config中的id："+config.base.userImageId);
     wx.setStorage({
       key: 'userData'+userImageId,
-      data: {Name:this.data.temName,Career:this.data.temCareer,Behavior:this.data.temBehavior,Need:this.data.temNeed,Province:this.data.temProvince,Age:this.data.temAge,Gender:this.data.temGender,numId:this.data.userImageId},
+      data: {
+        Name:this.data.temName,
+        Career:this.data.temCareer,
+        Behavior:this.data.temBehavior,
+        Need:this.data.temNeed,
+        Province:this.data.temProvince,
+        Age:this.data.temAge,
+        Gender:this.data.temGender,
+        numId:this.data.userImageId,
+        areaIndex: this.data.areaIndex},
       success:function(res){
        console.log(res);
       // console.log("this.data:"+this.data);
@@ -188,7 +198,7 @@ Page(Object.assign({}, Zan.Field, {
       }
     })
     wx.navigateTo({
-      url: '../testview/movable'
+      url: '../userImageList/userImageList'
     })
 
   },
