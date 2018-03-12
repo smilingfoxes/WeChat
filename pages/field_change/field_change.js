@@ -1,16 +1,16 @@
 const Zan = require('../../dist/index');
 const config = require('./config');
-var app=getApp();
+var app = getApp();
 Page(Object.assign({}, Zan.Field, {
 
   data: {
-    userImageId: 0,
+    //userImageId: 0,
     config,
     //value:'test' ,
-    valuen:'smile',
-    valuec:'学生',
+    valuen: 'smile',
+    valuec: '学生',
     textareaValueBehavior: 'test textarea',
-    textareaValueDemand:'test2 textarea',
+    textareaValueDemand: 'test2 textarea',
     area: ['省份', '北京市', '天津市', '河北省', '山西省', '内蒙古自治区', '辽宁省', '吉林省', '黑龙江省', '上海市', '江苏省', '浙江省', '安徽省', '福建省', '江西省', '山东省', '河南省', '湖北省', '湖南省', '广东省', '广西壮族自治区', '海南省', '重庆市', '四川省', '贵州省', '云南省', '西藏自治区', '陕西省', '甘肃省', '青海省', '宁夏回族自治区', '新疆维吾尔自治区', '台湾省', '香港特别行政区', '澳门特别行政区'],
     areaIndex: 0,
     // picker-view 示例配置
@@ -27,66 +27,67 @@ Page(Object.assign({}, Zan.Field, {
     temProvince: '',
     temAge: '',
     temGender: '',
-    temUserImageId:0,  //当前页面的用户画像id
+    temUserImageId: 0,  //当前页面的用户画像id
   },
   onLoad: function (options) {
     var that = this;
     that.setData({
-      temUserImageId: options.temUserImageId,
+      temUserImageId: parseInt(options.temUserImageId),
 
     }),
-    
-    wx.getStorage({
-      key: 'userData'+that.data.temUserImageId,
-      success: function(res) {
-        console.log("成功了取得要修改的用户画像的缓存："+res.data);
-        //var configName=config.base.name.value
-        //that.setData({configName:res.data.Name});
-        //that.setData()
-        var year = "pickerViewConfig.value[0]";
-        var sex = "pickerViewConfig.value[1]";
-        var sex_tem;
-        if(res.data.Gender=='男'){
-          sex_tem=0;
-        }else{
-          sex_tem=1
-        }
-        console.log("sex_tem"+sex_tem);
-        that.setData(
-          { valuen:res.data.Name,
-            valuec: res.data.Career,
-            textareaValueBehavior: res.data.Behavior,
-            textareaValueDemand: res.data.Need,
-            [year]: (res.data.Age-7),
-            [sex]:  sex_tem,
-            areaIndex: res.data.areaIndex,
-            temName: res.data.Name,
-            temCareer: res.data.Career,
-            temBehavior: res.data.Behavior,
-            temNeed: res.data.Need,
-            temProvince: res.data.Province,
-            temAge: res.data.Age,
-            temGender: res.data.Gender,
 
-          })
-        console.log("res.data.Name" + res.data.Name + "/年龄" + res.data.Age + "sex" + res.data.Gender + "areaIndex" + res.data.areaIndex);
-      },
-    })
-   /* wx.getStorage({
-      key: 'userImageId',
-      success: function (res) {
-        console.log("成功取得缓存:" + res);
-        that.setData({ userImageId: res.data });
-      },
-      fail: function (res) {
-        wx.setStorage({
-          key: 'userImageId',
-          data: config.base.userImageId,
+      wx.getStorage({
+        key: 'userData' + that.data.temUserImageId,
+        success: function (res) {
+          console.log("成功了取得要修改的用户画像的缓存：" + res.data);
+          //var configName=config.base.name.value
+          //that.setData({configName:res.data.Name});
+          //that.setData()
+          var year = "pickerViewConfig.value[0]";
+          var sex = "pickerViewConfig.value[1]";
+          var sex_tem;
+          if (res.data.Gender == '男') {
+            sex_tem = 0;
+          } else {
+            sex_tem = 1
+          }
+          console.log("sex_tem" + sex_tem);
+          that.setData(
+            {
+              valuen: res.data.Name,
+              valuec: res.data.Career,
+              textareaValueBehavior: res.data.Behavior,
+              textareaValueDemand: res.data.Need,
+              [year]: (res.data.Age - 7),
+              [sex]: sex_tem,
+              areaIndex: res.data.areaIndex,
+              temName: res.data.Name,
+              temCareer: res.data.Career,
+              temBehavior: res.data.Behavior,
+              temNeed: res.data.Need,
+              temProvince: res.data.Province,
+              temAge: res.data.Age,
+              temGender: res.data.Gender,
 
-        })
-        console.log("第一次把userImageId存到缓存")
-      },
-    })*/
+            })
+          console.log("res.data.Name" + res.data.Name + "/年龄" + res.data.Age + "sex" + res.data.Gender + "areaIndex" + res.data.areaIndex);
+        },
+      })
+    /* wx.getStorage({
+       key: 'userImageId',
+       success: function (res) {
+         console.log("成功取得缓存:" + res);
+         that.setData({ userImageId: res.data });
+       },
+       fail: function (res) {
+         wx.setStorage({
+           key: 'userImageId',
+           data: config.base.userImageId,
+ 
+         })
+         console.log("第一次把userImageId存到缓存")
+       },
+     })*/
 
 
   },
@@ -148,14 +149,14 @@ Page(Object.assign({}, Zan.Field, {
   clearInput() {
     this.setData({
       valuen: '',
-      valuec:''
+      valuec: ''
     });
   },
 
   clearTextarea() {
     this.setData({
       textareaValueBehavior: '',
-      textareaValueDemand:'',
+      textareaValueDemand: '',
     });
   },
 
@@ -199,32 +200,33 @@ Page(Object.assign({}, Zan.Field, {
     //this.setData({'userImageId':userImageId});
     //console.log(userImageId);
 
-   /* var tempNumber = wx.getStorageSync('userImageId');
-    try {
-      this.setData(userImageId, tempNumber);
-    } catch (e) {
-      console.log(e);
-    }
-    var userImageId = this.data.userImageId + 1;
-    console.log("提交时userImageId时的值：" + userImageId);
-    try {
-      wx.setStorageSync('userImageId', userImageId)
-    } catch (e) {
-      console.log("没有成功储存");
-    }
-
-    console.log("当前缓存中的值：");
-    wx.getStorage({
-      key: 'userImageId',
-      success: function (res) { console.log(res) },
-    })
-    console.log("config中的id：" + config.base.userImageId);*/
-     //app.globalData.temId=this.data.temUserImageId; //修改页面的用户画像id
-     console.log("temUserImageId"+this.data.temUserImageId);
+    /* var tempNumber = wx.getStorageSync('userImageId');
+     try {
+       this.setData(userImageId, tempNumber);
+     } catch (e) {
+       console.log(e);
+     }
+     var userImageId = this.data.userImageId + 1;
+     console.log("提交时userImageId时的值：" + userImageId);
+     try {
+       wx.setStorageSync('userImageId', userImageId)
+     } catch (e) {
+       console.log("没有成功储存");
+     }
+ 
+     console.log("当前缓存中的值：");
+     wx.getStorage({
+       key: 'userImageId',
+       success: function (res) { console.log(res) },
+     })
+     console.log("config中的id：" + config.base.userImageId);*/
+    //app.globalData.temId=this.data.temUserImageId; //修改页面的用户画像id
+    console.log("temUserImageId" + this.data.temUserImageId);
     wx.setStorage({
       key: 'userData' + this.data.temUserImageId,
-      data: { Name: this.data.temName, Career: this.data.temCareer, Behavior: this.data.temBehavior, Need: this.data.temNeed, Province: this.data.temProvince, Age: this.data.temAge, Gender: this.data.temGender, numId: this.data.userImageId, areaIndex: this.data.areaIndex
-       },
+      data: {
+        Name: this.data.temName, Career: this.data.temCareer, Behavior: this.data.temBehavior, Need: this.data.temNeed, Province: this.data.temProvince, Age: this.data.temAge, Gender: this.data.temGender, numId: this.data.temUserImageId - 1, areaIndex: this.data.areaIndex
+      },
       success: function (res) {
         console.log(res);
         // console.log("this.data:"+this.data);

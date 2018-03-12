@@ -1,5 +1,5 @@
 // pages/myOrder/myOrder.js
-var app=getApp();
+var app = getApp();
 Page({
 
   /**
@@ -8,7 +8,7 @@ Page({
   data: {
     uhide: 0,
     userImageId: 0,
-    datai:0,
+    datai: 0,
   },
 
   /**
@@ -16,12 +16,12 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var i=0;
+    var i = 0;
     var data = {
-     
-     
+
+
       "datas": [
-        {
+        /*{
           "id": 1,
          
           "Name": "示例",
@@ -32,7 +32,7 @@ Page({
           "behavior":"爱好编程， 测试测试测试测试测试测试测试，测试测试测试测试测试测试测试，测试测试测试测试测试测试测试",
           "demand":"需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide，需要方便的ide"
         },
-       /* {
+        {
           "id": 2,
           
           "Name": "李四",
@@ -72,57 +72,57 @@ Page({
     that.setData({
       carInfoData: data.datas
     })
-     
-   wx.getStorage({
-     key: 'userImageId',
-     success: function(res) {
-       that.setData({userImageId:res.data})
-       console.log("UUUUUUUUUuserImageId:"+that.data.userImageId);
-       for (i = 1; i <= that.data.userImageId; i++) {
-         app.globalData.userImageIdKey = 'userData' + i;
-         that.setData({datai:i});
-         //that.setData({})
-         wx.getStorage({
-           key: app.globalData.userImageIdKey,
-           success: function (res) {
-             
-             
-             console.log("终于成功调取缓存"+i);
-             console.log(res.data);
-            
 
-             
-             var newarray = [{
-               "id": res.data.numId+2 ,
+    wx.getStorage({
+      key: 'userImageId',
+      success: function (res) {
+        that.setData({ userImageId: res.data })
+        console.log("UUUUUUUUUuserImageId:" + that.data.userImageId);
+        for (i = 1; i <= that.data.userImageId; i++) {
+          app.globalData.userImageIdKey = 'userData' + i;
+          that.setData({ datai: i });
+          //that.setData({})
+          wx.getStorage({
+            key: app.globalData.userImageIdKey,
+            success: function (res) {
 
-               "Name": res.data.Name,
-               "career": res.data.Career,
-               "age": res.data.Age,
-               "gender": res.data.Gender,
-               "address": res.data.Province,
-               "behavior": res.data.Behavior,
-               "demand": res.data.Need,
-             }];
-             
-             data.datas=data.datas.concat(newarray);
-             that.setData({
-               carInfoData: data.datas
-             });
-             console.log("datas:"+that.data.carInfoData);
-           },
-           fail: function (res) {
-             console.log("调取缓存失败");
-           }
-         })
-       }
-     },
-     fail: function(res){
-       console.log("调取id失败");
-     }
-   });
 
-   
-   
+              console.log("终于成功调取缓存" + i);
+              console.log(res.data);
+
+
+
+              var newarray = [{
+                "id": res.data.numId + 1,
+
+                "Name": res.data.Name,
+                "career": res.data.Career,
+                "age": res.data.Age,
+                "gender": res.data.Gender,
+                "address": res.data.Province,
+                "behavior": res.data.Behavior,
+                "demand": res.data.Need,
+              }];
+
+              data.datas = data.datas.concat(newarray);
+              that.setData({
+                carInfoData: data.datas
+              });
+              console.log("datas:" + that.data.carInfoData);
+            },
+            fail: function (res) {
+              console.log("调取缓存失败");
+            }
+          })
+        }
+      },
+      fail: function (res) {
+        console.log("调取id失败");
+      }
+    });
+
+
+
   },
 
   //切换隐藏和显示 
@@ -141,15 +141,15 @@ Page({
     }
   },
   //修改用户画像
-  changeContent:function(event){
-   /* console.log("event.currentTarget.id" + event.currentTarget.id);
-    var temKey = 'userData' + (event.currentTarget.id - 1)
-    console.log("temkey" + temKey)*/
+  changeContent: function (event) {
+    /* console.log("event.currentTarget.id" + event.currentTarget.id);
+     var temKey = 'userData' + (event.currentTarget.id - 1)
+     console.log("temkey" + temKey)*/
     wx.navigateTo({
       //url: '../testview/movable?title=' + event.currentTarget.id
-      url: '../field_change/field_change?temUserImageId=' + (event.currentTarget.id - 1)
+      url: '../field_change/field_change?temUserImageId=' + (event.currentTarget.id)
     });
-    
+
     /*wx.getStorage({
       key: temKey,
       success: function(res) {
@@ -160,17 +160,17 @@ Page({
       }
     })*/
     //console.log("要修改的数据："+data.datas[event.currentTarget.id]);
-  }, 
- 
-  
-    /**
-     *    * 生命周期函数--监听页面初次渲染完成,
-    })
   },
 
+
   /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+   *    * 生命周期函数--监听页面初次渲染完成,
+  })
+},
+
+/**
+ * 生命周期函数--监听页面初次渲染完成
+ */
   onReady: function () {
 
   },
