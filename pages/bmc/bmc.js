@@ -6,7 +6,7 @@ Page({
     slidenum: 0,
     animationData: {},
     cardInfoList: [{
-      cardUrl:'../../images/flower.png',
+      cardUrl:'../../images/background.png',
       cardid: "0",
       cardInfo: {
        
@@ -14,7 +14,7 @@ Page({
         cardInfoMes: ['', '']
       }
     }, {
-        cardUrl: '../../images/flower.png',
+        cardUrl: '../../images/background.png',
         cardid: "1",
       cardInfo: {
         
@@ -22,7 +22,7 @@ Page({
         cardInfoMes: ['价值主张', '', '']
       }
     }, {
-        cardUrl: '../../images/flower.png',
+        cardUrl: '../../images/background.png',
         cardid: "2",
       cardInfo: {
         
